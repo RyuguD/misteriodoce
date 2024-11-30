@@ -42,5 +42,9 @@
 
     .img-celular {
         display: block; /* Exibe a imagem para celulares */
+        object-fit: cover; /* Faz com que a imagem preencha completamente a área sem distorção */
+        width: 100%; /* Garante que a largura da imagem seja 100% da tela */
+        height: 100vh; /* Faz a imagem ocupar toda a altura da tela */
     }
 }
+
