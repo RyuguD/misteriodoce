@@ -1,14 +1,17 @@
 /* Define que todas as imagens do carrossel terão o mesmo tamanho */
 .carousel-item img {
     object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorção */
-    height: 80vh; /* Define a altura das imagens como 70% da altura da viewport */
-    width: 100%; /* Garante que a largura das imagens preencha o container */
+    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    width: 100%; /* Garante que a largura preencha completamente o container */
 }
 
 /* Ajuste responsivo para dispositivos menores */
 @media (max-width: 768px) {
     .carousel-item img {
-        height: 100vh; /* Reduz a altura das imagens para melhor visualização em telas menores */
+        object-fit: contain; /* Mostra toda a imagem sem cortes em telas menores */
+        height: auto; /* Ajusta a altura automaticamente */
+        max-height: 100vh; /* Limita a altura à viewport */
+        width: 100%; /* Mantém a largura preenchendo o espaço */
     }
 }
 
@@ -20,4 +23,24 @@
 
 .carousel-fade .carousel-item.active {
     opacity: 1; /* Fica visível quando o slide está ativo */
+}
+
+/* Estilos padrão: esconde a imagem do celular em telas maiores */
+.img-celular {
+    display: none; /* A imagem para celular NÃO aparece por padrão */
+}
+
+.img-pc {
+    display: block; /* A imagem para PC aparece por padrão */
+}
+
+/* Estilos para dispositivos menores (máximo 768px) */
+@media (max-width: 768px) {
+    .img-pc {
+        display: none; /* Esconde a imagem do PC em telas pequenas */
+    }
+
+    .img-celular {
+        display: block; /* Exibe a imagem para celulares */
+    }
 }
