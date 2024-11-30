@@ -1,3 +1,23 @@
-div {
-    align-content: center;
+/* Define que todas as imagens do carrossel terão o mesmo tamanho */
+.carousel-item img {
+    object-fit: cover; /* Ajusta a imagem para preencher o espaço sem distorção */
+    height: 80vh; /* Define a altura das imagens como 70% da altura da viewport */
+    width: 100%; /* Garante que a largura das imagens preencha o container */
+}
+
+/* Ajuste responsivo para dispositivos menores */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 100vh; /* Reduz a altura das imagens para melhor visualização em telas menores */
+    }
+}
+
+/* Estilização das transições */
+.carousel-fade .carousel-item {
+    opacity: 0; /* Começa invisível */
+    transition: opacity 1s ease-in-out; /* Transição suave de opacidade */
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1; /* Fica visível quando o slide está ativo */
 }
